@@ -3,11 +3,18 @@
     top: 0;
     left: 0;
     z-index: 1050;
-    display: none;
     width: 100%;
     height: 100%;
     overflow: hidden;
     background-color: rgba(0,0,0,.5);
+    // transition: 1s all;
+    animation: ani 1s forwards;
+    @keyframes ani {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    
+
     &__dialog {
         max-width: 500px;
         margin: 40px auto;
@@ -57,4 +64,13 @@
         width: 280px;
         margin: 0 auto;
     }
+    .show {
+        display: block;
+
+    }
+    .hide {
+        display: none;
+    }
+
 }
+
