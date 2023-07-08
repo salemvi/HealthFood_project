@@ -206,6 +206,22 @@ window.addEventListener('DOMContentLoaded', () => {
 //     console.log(number * basis);
 // }
 // calcOrDouble(3);
+
+//  const person = {
+//     name: 'Alex',
+//     tel: '79325533677',
+//     parents: {
+//         mom: 'Olga',
+//         dad: 'Mike'
+//     }
+//  }
+
+// console.log(JSON.parse(JSON.stringify(person)));
+
+// const clone = JSON.parse(JSON.stringify(person));
+// clone.parents.mom = 'Ann';
+// console.log(clone);
+// console.log(person);
 /******/ })()
 ;
 //# sourceMappingURL=script.js.map
