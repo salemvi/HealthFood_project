@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const sass = require('gulp-sass')(require('sass'));
@@ -6,8 +7,8 @@ const cleanCSS = require('gulp-clean-css');
 const postcss = require('gulp-postcss');
 const browsersync = require('browser-sync');
 
-const dist = '/Applications/MAMP/htdocs/Food-pr/dist'; // для того, чтобы менять в мампе из проекта
-
+// const dist = '/Applications/MAMP/htdocs/Food-pr/dist'; // для того, чтобы менять в мампе из проекта
+const dist = './dist';
 gulp.task('copy-html', () => {
 	return gulp
 		.src('./src/index.html')
