@@ -1,6 +1,4 @@
-function timer() {
-
-	const  deadline = '2023-09-29';
+function timer(id, deadline ) {
 
 	function setZero(num) {
 		if (num < 0){
@@ -56,7 +54,7 @@ function timer() {
 		}
 
 	}
-	setClock('.timer', deadline);
+	setClock(id, deadline);
 }
 // eslint-disable-next-line no-undef
-module.exports = timer;
+export default timer;

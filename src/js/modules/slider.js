@@ -1,18 +1,18 @@
 /* eslint-disable no-undef */
-function slider() {
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
 
 	//v1
-	const slides = document.querySelectorAll('.offer__slide'),
-		prev = document.querySelector('.offer__slider-prev'),
-		next = document.querySelector('.offer__slider-next'),
-		total = document.querySelector('#total'),
-		current = document.querySelector('#current'),
+	const slides = document.querySelectorAll(slide),
+		slider = document.querySelector(container),
+		prev = document.querySelector(prevArrow),
+		next = document.querySelector(nextArrow),
+		total = document.querySelector(totalCounter),
+		current = document.querySelector(currentCounter),
 		//v1	
-		slidesWrapper = document.querySelector('.offer__slider-wrapper'), // обертка слайдера
-		slidesField = document.querySelector('.offer__slider-inner'), // поле (окошко слайдера)
+		slidesWrapper = document.querySelector(wrapper), // обертка слайдера
+		slidesField = document.querySelector(field), // поле (окошко слайдера)
 		width = window.getComputedStyle(slidesWrapper).width; // получаем ширину блока
 	//dots for slider
-	const slider = document.querySelector('.offer__slider');
 	//ind
 	let slideIndex = 1;
 	let offset = 0;
@@ -68,7 +68,6 @@ function slider() {
 		dots[slideIndex-1].style.opacity = 1;
 	}
 
-
 	next.addEventListener('click', () => {
 		if(offset == replaceWords(width) * (slides.length - 1)) { // 650?
 			offset = 0;
@@ -94,17 +93,14 @@ function slider() {
 		}
 		slidesField.style.transform = `translateX(-${offset}px)`;
 
-
 		if(slideIndex == 1) {
 			slideIndex = slides.length;
 		} else {
 			slideIndex--;
 		}
-
 		addZeroForCurrent();
 		//dots
 		changeActiveDots();
-
 	});
 	dots.forEach(dot => {
 		dot.addEventListener('click', (e) => {
@@ -120,7 +116,7 @@ function slider() {
 		});
 	});
 }
-module.exports = slider;
+export default slider;
 
 //slider v1
 
